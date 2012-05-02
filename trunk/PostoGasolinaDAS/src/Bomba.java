@@ -3,17 +3,21 @@ import java.util.Vector;
 
 
 public class Bomba {
+	
+	public static final int DESLIGADA = 0;
+	public static final int ATIVADA = 1;
+	public static final int DESATIVADA = 2;
 
 	public static Vector<Bomba> bombas = new Vector<Bomba>();
 	
 	
 	private int numero;
-	private String status; 
+	private int status;
 	private Vector<Bico> bicos = new Vector<Bico>();
 	
 	
 	public Bomba() {
-		this.status = "Desligada"; 
+		this.status = DESLIGADA; 
 		for (int i=1; i<=4; i++) {
 			bicos.add(new Bico(i));
 		}
@@ -62,7 +66,7 @@ public class Bomba {
 		return numero;
 	}
 	
-	public String getStatus(){
+	public int getStatus(){
 		return status;
 	}
 	
