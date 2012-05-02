@@ -11,7 +11,7 @@ public class VendaTest {
 	
 	@Test
 	public void testeCriacaoVenda() {
-		Assert.assertEquals("Não iniciada", v.getStatus());	
+		Assert.assertEquals(Venda.NAO_INICIADA, v.getStatus());	
 	}
 
 	@Test
