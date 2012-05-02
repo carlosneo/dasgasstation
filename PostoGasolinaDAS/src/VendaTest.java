@@ -1,5 +1,3 @@
-import static org.junit.Assert.*;
-
 import java.util.Date;
 
 import junit.framework.Assert;

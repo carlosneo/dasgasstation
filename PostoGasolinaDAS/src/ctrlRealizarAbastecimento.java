@@ -9,7 +9,7 @@ public class ctrlRealizarAbastecimento {
 	/**
 	 * Contrato de operação:
 	 * ok - Uma instancia v de Venda tem que ser criada.
-	 * O atributo v.codigoCartao torna-se o valor lido pela leitora de código de barras
+	 * ok -O atributo v.codigoCartao torna-se o valor lido pela leitora de código de barras
 	 * ok - Uma instancia b de bomba tem que ser obtida a partir da correspondencia com o valor da bomba informado
 	 * Uma instancia bi de bico tem que ser obtida a partir da correspondencia com o valor do bico informado
 	 * O atributo bi.status torna-se "Abastecendo"
