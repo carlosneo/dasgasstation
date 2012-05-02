@@ -16,7 +16,7 @@ public class Venda {
 	private float valorTotal;
 	
 	public Venda() {
-		status = NAO_INICIADA; 
+		setStatus(NAO_INICIADA); 
 	}
 	
 	public Venda(Date data, int codigoCartao) {
@@ -28,42 +28,10 @@ public class Venda {
 	public int getStatus() {
 		return status;
 	}
-	
-	public Date getData(){
-		return data;
-	}
-	
-	public int getCodigoCartao(){
-		return codigoCartao;
-	}
-	
-	public void setCodigoCartao (int codigoCartao){
-		this.codigoCartao = codigoCartao;
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
-	public float getQtdeLitrosAbastecidos() {
-		return qtdeLitrosAbastecidos;
-	}
-
-	public void setQtdeLitrosAbastecidos(float qtdeLitrosAbastecidos) {
-		this.qtdeLitrosAbastecidos = qtdeLitrosAbastecidos;
-	}
-
-	public String getCombustivel() {
-		return combustivel;
-	}
-
-	public void setCombustivel(String combustivel) {
-		this.combustivel = combustivel;
-	}
-
-	public float getValorTotal() {
-		return valorTotal;
-	}
-
-	public void setValorTotal(float valorTotal) {
-		this.valorTotal = valorTotal;
-	}
-	
 	
 }

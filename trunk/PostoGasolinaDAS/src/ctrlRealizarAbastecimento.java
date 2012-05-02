@@ -5,6 +5,7 @@ public class ctrlRealizarAbastecimento {
 
 	private static Vector <Venda> vendas = new Vector<Venda>();
 	private static Vector <Bomba> bombas = new Vector<Bomba>();
+	private static Vector <Reservatorio> reservatorios = new Vector<Reservatorio>();
 	
 	/**
 	 * Contrato de operação:
