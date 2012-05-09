@@ -43,6 +43,10 @@ public class Bomba {
 			}
 		}
 		
+		if (encontrou == false) {
+			resposta = new Bomba(numero);
+		}
+		
 		return resposta;
 	}
 	
@@ -90,7 +94,12 @@ public class Bomba {
 		return this.status;
 	}
 	
-		
+	
+	
+	
+	
+	
+	
 	
 	public int getNumero() {
 		return numero;

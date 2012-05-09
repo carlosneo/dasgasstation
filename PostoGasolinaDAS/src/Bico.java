@@ -56,5 +56,9 @@ public class Bico {
 		
 		return this.status;
 	}
+	
+	public int getStatus(){
+		return this.status;
+	}
+	
 }
-

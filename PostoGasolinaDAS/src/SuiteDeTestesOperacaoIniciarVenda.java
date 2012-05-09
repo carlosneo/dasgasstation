@@ -4,7 +4,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ BombaTest.class, BicoTest.class, VendaTest.class, })
+@SuiteClasses({ ctrlRealizarAbastecimentoTest.class,  BombaTest.class, BicoTest.class, VendaTest.class })
 public class SuiteDeTestesOperacaoIniciarVenda {
 
 }
