@@ -1,17 +1,13 @@
 
 public class Bico {
-	public final int ABASTECENDO = 0;
-	public final int DESLIGADO = 1;
-	public final int TRAVADO = 2;
 	
-	public static final int GASOLINA_COMUM = 0;
-	public static final int GASOLINA_ADITIVADA = 1;
-	public static final int ALCOOL = 2;
-	public static final int DIESEL = 3;
+	public static final int DESLIGADO = 0;
+	public static final int ABASTECENDO = 1;
+	public static final int TRAVADO = 2;
 	
-	private int status; 
-	private int numero;
-	private int combustivel;
+	private int numero; 
+	private int status;
+	private String combustivel;
 	private int litrosIniciais, 
 	            litrosFinais,
 	            qtdeLitrosVendidos;
@@ -20,16 +16,45 @@ public class Bico {
 		litrosIniciais = 0;
 		litrosFinais = 0;
 		qtdeLitrosVendidos = 0;
+		combustivel = "";
+		status = DESLIGADO;
 	}
 	
-	public Bico(int numero, int combustivel) {
+	public Bico(int numero) {
 		this();
 		this.numero = numero;
-		this.combustivel = combustivel;
 	}
 	
 	public int getNumero() {
 		return this.numero;
 	}
 	
+	
+	public int alterarStatus (int status) {
+		switch (this.status) {
+		
+		case DESLIGADO:
+			if (status == DESLIGADO)
+				this.status = DESLIGADO;
+			else if (status == ABASTECENDO)
+				this.status = ABASTECENDO;
+			else return -1; //estado inalcancavel
+		break;
+		
+		case ABASTECENDO:
+			if (status == DESLIGADO)
+				this.status = DESLIGADO;
+			else if (status == TRAVADO)
+				this.status = TRAVADO;
+		break; 
+		
+		case TRAVADO:
+			if (status != TRAVADO)
+				return -1; //estado inalcancavel
+		break;
+		}
+		
+		return this.status;
+	}
 }
+
