@@ -14,14 +14,6 @@ public class BombaTest {
 
 	Bomba b1, b2, b3, b4, b5, b6;
 	
-	@After
-	public void tearDown(){
-		
-		Bomba.bombas.clear();
-		
-	}
-	
-	
 	Bico bi1 = new Bico(1), 
 		 bi2 = new Bico(2), 
 		 bi3 = new Bico(3), 
@@ -30,12 +22,24 @@ public class BombaTest {
 	
 	@Before
 	public void setUP() {
-		b1 = new Bomba(1);
-		b2 = new Bomba(2);
-		b3 = new Bomba(3);
-		b4 = new Bomba(4); 
-		b5 = new Bomba(5);
-		b6 = new Bomba(6);
+		b1 = Bomba.obterBomba(1);
+		b2 = Bomba.obterBomba(2);
+		b3 = Bomba.obterBomba(3);
+		b4 = Bomba.obterBomba(4);
+		b5 = Bomba.obterBomba(5);
+		b6 = Bomba.obterBomba(6);
+		
+		b1.alterarStatus(Bomba.DESLIGADA);
+		b2.alterarStatus(Bomba.DESLIGADA);
+		b3.alterarStatus(Bomba.DESLIGADA);
+		b4.alterarStatus(Bomba.DESLIGADA);
+		b5.alterarStatus(Bomba.DESLIGADA);
+		b6.alterarStatus(Bomba.DESLIGADA);
+	}
+	
+	@After 
+	public void tearDown(){
+		Bomba.bombas.clear();
 	}
 	
 	@Test
