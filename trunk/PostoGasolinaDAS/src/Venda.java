@@ -12,7 +12,8 @@ public class Venda {
 	private Date data; 
 	private int status;
 	private int codigoCartao;
-	private Bomba bomba; 
+	private Bomba bomba;
+	private Abastecimento abastecimento;
 	
 	public Venda() {
 		status = NAO_INICIADA;
@@ -92,5 +93,14 @@ public class Venda {
 	public Bomba getBomba(){
 		return this.bomba;
 	}
-	
+
+	public Abastecimento getAbastecimento() {
+		return abastecimento;
+	}
+
+	public void setAbastecimento(Abastecimento abastecimento) {
+		this.abastecimento = abastecimento;
+	}
+
+
 }

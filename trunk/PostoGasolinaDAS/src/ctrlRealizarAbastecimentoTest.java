@@ -11,10 +11,14 @@ import org.junit.Test;
 public class ctrlRealizarAbastecimentoTest {
 
 	ctrlRealizarAbastecimento controladora;
+	Venda v;
 	
 	@Before
 	public void setUP() {
 		controladora = new ctrlRealizarAbastecimento();
+		controladora.iniciarNovaVenda(2, 1, 13, new Date(2012, 5, 9));
+		v = controladora.getVenda();
+		
 	}
 	
 	@After 
@@ -33,10 +37,6 @@ public class ctrlRealizarAbastecimentoTest {
 	 * */
 	@Test
 	public void testIniciarVenda() {
-		controladora.iniciarNovaVenda(2, 1, 13, new Date(2012, 5, 9));
-		Venda v = controladora.getVenda();
-		
-		
 		
 		Assert.assertNotNull(v);
 		Assert.assertEquals(13, v.getCodigoCartao());
@@ -48,20 +48,26 @@ public class ctrlRealizarAbastecimentoTest {
 		Assert.assertEquals(Venda.INICIADA, v.getStatus());
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Test
+	public void testDefinirAbastecimento(){
+		controladora.definirAbastecimento("quantia", 20);
+				
+		Assert.assertEquals(AbsQuantia.class.getName(), controladora.getAbastecimento().getClass().getName());
+		Assert.assertNotNull(controladora.getVenda().getAbastecimento());
+		Assert.assertNotNull(controladora.getAbastecimento().getBomba());
+		
+		controladora.definirAbastecimento("Litros", 20);
+		
+		Assert.assertEquals(AbsLitros.class.getName(), controladora.getAbastecimento().getClass().getName());
+		Assert.assertNotNull(controladora.getVenda().getAbastecimento());
+		Assert.assertNotNull(controladora.getAbastecimento().getBomba());
+		
+		controladora.definirAbastecimento("", 20);
+		
+		Assert.assertEquals(AbsTotal.class.getName(), controladora.getAbastecimento().getClass().getName());
+		Assert.assertNotNull(controladora.getVenda().getAbastecimento());
+		Assert.assertNotNull(controladora.getAbastecimento().getBomba());
+	}
 	
 
 }
